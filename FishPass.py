@@ -104,10 +104,10 @@ def find_main_stems(tr, ft):
                 all_main_stem_reaches.append(m)
                 
         else:
-            #if not_term_list is length 0, just make an empty list
-            all_main_stem_reaches = []
+            #if not_term_list is length 0, do not append anything to the master results list
+            pass
     
-    #to remove any dupliates, only use unique values for the final list
+    #to remove any duplicates, only use unique values for the final list
     all_main_stem_reaches_unique = list(set(all_main_stem_reaches))
     
     #print a message 
@@ -243,8 +243,8 @@ def fish_passage(dd, ori, ft, pct_pass, pct_cutoff, sa):
 
     #loop thru origin list
     for origin in ori:
-        #print a message
-        print("Analyzing fish passage upstream of " + origin + ".......")
+        #optionlly, print a message
+        #print("Analyzing fish passage upstream of " + origin + ".......")
 
         #seed a starting population of 100
         #in the future, this number could be a function parameter and explicit origin stream population values could be used
