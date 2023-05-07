@@ -31,13 +31,13 @@ and either:
 
 A sample dataset of stream network, watershed polygons, and beaver dam barriers for the Chena River area of Interior Alaska is included in this repository for demonstration. The ```FishPassageModel.ipynb``` notebook references this dataset. 
 
-The environment file ```FishPass.yml``` will allow you to run the ```FishPassageModel.ipynb``` notebook, and contains Jupyter Lab 3.5.3. Build this environment if you do not currently have a method of running Jupyter notebooks. Otherwise, simply confirm that the following packages are installed in an existing environment capable of running Jupyter notebooks:
+The environment file ```FishPass.yml``` contains Jupyter Lab 3.5.3 and provides one option for you to run the ```FishPassageModel.ipynb``` notebook. Build this environment if you do not currently have a method of running Jupyter notebooks. Otherwise, simply confirm that the following packages are installed in an existing environment capable of running Jupyter notebooks:
 
 - ```geopandas``` 0.12.2
 - ```pandas``` 1.5.3
 - ```matplotlib``` 3.7.1
 
-If you aren't interested in running the demo notebook and just want to use the ```FishPass.py``` module, the only package required is:
+If you aren't interested in running the demo notebook and just want to start using the ```FishPass.py``` module, the only required package is:
 
 - ```pandas``` 1.5.3
 
