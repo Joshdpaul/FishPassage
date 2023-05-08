@@ -6,7 +6,12 @@ The ```FishPass.py``` module provides a flexible way to model passage of fish po
 Main stems, tributary origin points, and terminal watershed origin points can be manually defined by the user; or the tool can identify these features provided the stream network reaches are joined with surrounding watersheds. Non-terminal watersheds will not have main stems defined. Please see the diagram below and read the tool documentation to learn more about the options available.
 
 
-![readme_diagram_v2](https://user-images.githubusercontent.com/99696041/236880658-c17afaf7-128a-4fee-97a8-1428a7ab91e5.png)
+
+
+![readme_diagram_v3](https://user-images.githubusercontent.com/99696041/236882563-d6228a69-76fd-4475-8090-8ae81af5ddb1.png)
+
+
+
 
 
 All operations are tabular in nature. This means the user must perform all spatial analysis prior to using the tool. (See the notebook in this repository for an example of preprocessing operations using ```geopandas```.)
