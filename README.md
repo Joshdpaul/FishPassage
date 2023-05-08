@@ -1,12 +1,12 @@
 # FishPassage
 
-The ```FishPass.py``` module provides a flexible way to model passage of fish populations from main stem origin points upstream into the terminal tributaries of a synthetic stream network. As the fish travel upstream from their origins, populations are reduced at user-defined barriers and at stream confluences. Proportional splitting of populations at stream confluences based on stream network attributes is possible, or populations can persist through confluences with no reduction. Upstream travel stops when the population reaches a user-defined threshold.
+The ```FishPass.py``` module provides a flexible way to model passage of fish populations from main stem origin points upstream into the ttributaries of a synthetic stream network. As the fish travel upstream from their origins, populations are reduced at user-defined barriers and at stream confluences. Proportional splitting of populations at stream confluences based on stream network attributes is possible, or populations can persist through confluences with no reduction. Upstream travel stops when the population reaches a user-defined threshold.
 
 
-Main stems and terminal tributary origin points can be manually defined by the user, or the tool can identify these features provided the stream network reaches are joined with surrounding drainage units (ie, watersheds). Please read the tool documentation to learn more about the options available.
+Main stems, tributary origin points, and terminal watershed origin points can be manually defined by the user; or the tool can identify these features provided the stream network reaches are joined with surrounding watersheds. Non-terminal watersheds will not have main stems defined. Please see the diagram below and read the tool documentation to learn more about the options available.
 
 
-![readme_diagram](https://user-images.githubusercontent.com/99696041/236638019-64a12ef1-8a10-46e1-b6dc-3c4f6fa2779d.png)
+![readme_diagram_v2](https://user-images.githubusercontent.com/99696041/236880658-c17afaf7-128a-4fee-97a8-1428a7ab91e5.png)
 
 
 All operations are tabular in nature. This means the user must perform all spatial analysis prior to using the tool. (See the notebook in this repository for an example of preprocessing operations using ```geopandas```.)
