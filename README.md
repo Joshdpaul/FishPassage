@@ -1,6 +1,6 @@
 # FishPassage
 
-The ```FishPass.py``` module provides a flexible way to model passage of fish populations from main stem origin points upstream into the ttributaries of a synthetic stream network. As the fish travel upstream from their origins, populations are reduced at user-defined barriers and at stream confluences. Proportional splitting of populations at stream confluences based on stream network attributes is possible, or populations can persist through confluences with no reduction. Upstream travel stops when the population reaches a user-defined threshold.
+The ```FishPass.py``` module provides a flexible way to model passage of fish populations from main stem origin points upstream into the tributaries of a synthetic stream network. As the fish travel upstream from their origins, populations are reduced at user-defined barriers and at stream confluences. Proportional splitting of populations at stream confluences based on stream network attributes is possible, or populations can persist through confluences with no reduction. Upstream travel stops when the population reaches a user-defined threshold.
 
 
 Main stems, tributary origin points, and terminal watershed origin points can be manually defined by the user; or the tool can identify these features provided the stream network reaches are joined with surrounding watersheds. Non-terminal watersheds will not have main stems defined. Please see the diagram below and read the tool documentation to learn more about the options available.
