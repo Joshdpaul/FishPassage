@@ -67,17 +67,13 @@ def find_main_stems(tr, ft):
     print('Processing ' + str(len(tribs)) + ' unique tributaries...')
         
     #loop thru trib IDs, creating a list with all corresponding reach IDs from the tributary table
-    #seed an empty dataframe with from-to table columns, and populate with all from-to rows containing trib reaches
+    #query all from-to rows containing trib reaches
     #this will build a tributary-level subset of the from-to table
     for trib in tribs:
         reaches = list(tr[tr.iloc[:,0] == trib].iloc[:,1])
-        
-        ft_sub = pandas.DataFrame(columns=ft.columns.to_list())
-
-        for r in reaches:
-            rft = ft[ft.eq(r).any(axis=1)]
-            ft_sub = pandas.concat([ft_sub, rft])   
-    
+      
+        ft_sub = ft[(ft.iloc[:,0].isin(reaches)) | (ft.iloc[:,1].isin(reaches))]
+      
         #if any of the from-to subset rows has a "from" ID that is NOT in the trib reach list, then its NOT a terminal stream
         #these are locations where the main stem reaches pass from one trib to the next in the upstream direction
         not_term_list = [i for i in ft_sub.iloc[:,0].to_list() if i not in reaches]
@@ -155,12 +151,10 @@ def find_origins(ms, ft):
     #seed an empty list for origin reach IDs 
     origins = []
 
-    #query each row in the from-to table, looking for reach IDs that flow "to" main stems, but are not main stems themselves
+    #query reach IDs that flow "to" main stems, but are not main stems themselves
     #populate the origins list with any "from" reach IDs meeting that definition
-    for row in range(len(ft)):
-        r = ft.iloc[row]
-        if r[1] in ms and r[0] not in ms:
-            origins.append(r[0])
+    ft_sub = ft[(ft.iloc[:,1].isin(ms)) & (~ft.iloc[:,0].isin(ms))]
+    origins = ft_sub.iloc[:,0].tolist()
     
     #to remove any dupliates, only use unique values for the final list
     origins_unique = list(set(origins))
